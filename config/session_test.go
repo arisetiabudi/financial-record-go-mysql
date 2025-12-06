@@ -47,8 +47,8 @@ func TestSessionStoreOptions_FromEnv(t *testing.T) {
                 _ = os.Setenv("APP_ENV", tc.appEnv)
             }
 
-            // Re-run package init to rebuild Store berdasarkan env sekarang
-            init()
+            // Reinitialize Store based on current envs
+            InitStore()
 
             if Store == nil {
                 t.Fatalf("Store == nil setelah init()")

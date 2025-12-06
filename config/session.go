@@ -11,8 +11,7 @@ const SESSION_ID = "finacial_record_okt"
 const FLASH_ID = "flash_logout"
 
 var Store *sessions.CookieStore
-
-func init() {
+func InitStore() {
 	// Secure cookie default: false for local/dev. Enable by env var `APP_SECURE_COOKIE=true` in production (HTTPS).
 	secure := false
 	if strings.ToLower(os.Getenv("APP_SECURE_COOKIE")) == "true" || strings.ToLower(os.Getenv("APP_ENV")) == "production" {
@@ -26,4 +25,8 @@ func init() {
 		HttpOnly: true,
 		Secure:   secure,
 	}
+}
+
+func init() {
+	InitStore()
 }
