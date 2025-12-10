@@ -1,0 +1,12 @@
+name : ari
+
+serivices:
+app:
+build: ./app
+ports:
+-"8000:8000"
+volumes:
+- vol-app:/public/user_photo
+
+volumes:
+vol-app:
